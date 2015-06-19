@@ -350,16 +350,6 @@ var Select2Component = Ember.Component.extend({
 
       if (unmatchedValues === 0) {
         self.set('_hasSelectedMissingItems', false);
-      } else {
-        // disable the select2 element if there are keys left in the values
-        // array that were not matched to an object
-        self.set('_hasSelectedMissingItems', true);
-
-        Ember.warn("select2#initSelection was not able to map each \"" +
-          optionValuePath +"\" to an object from \"content\". The remaining " +
-          "keys are: " + values + ". The input will be disabled until a) the " +
-          "desired objects is added to the \"content\" array or b) the " +
-          "\"value\" is changed.", !values.length);
       }
 
       if (multiple) {
